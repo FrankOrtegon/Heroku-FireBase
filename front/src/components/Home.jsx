@@ -7,11 +7,10 @@ const Home = () =>{
                 <div className="col-md-3"/>
                 <div className="col-md-6">
                     <br/><br/>
-                    <h1 className="cover-heading mt-5 font-weight-bold">Welcome to Splash App <i
+                    <h1 className="cover-heading mt-5 font-weight-bold">Welcome to Serie App <i
                         className="bi bi-controller" /></h1>
-                    <h4 className={"color-black mt-5"}>What are you waiting for to be part of this wonderful community, don't wait any longer and
-                        register to start interacting with other users</h4>
-                    <Link className=" mt-5 btn btn-dark" to={"/signup"}>Register now</Link>
+                        <img src={"https://static1.colliderimages.com/wordpress/wp-content/uploads/2020/11/Best-tv-shows-Netflix-V3.jpg"} />
+                    <h4 className={"color-black mt-5"}>Here you can add and see a list of recommended series</h4>
                     <br/><br/>
                 </div>
             </div>
