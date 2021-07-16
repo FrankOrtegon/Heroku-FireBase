@@ -31,13 +31,14 @@ const CreateSeries = () => {
     }
 
     return (
-        <div className=" container text-center ">
-            <div className="row">
-                <div className="col-md-3"/>
-                <div className="col-md-6">
+        <div className="col-md-6 mx-auto">
+             <div className="card">
+                <div className="card-header">
+                    <h3>Form to create series</h3>
+                </div>
+                    <div class="card-footer">
 
-                        <form className="text-center p-3" >
-                            <h3 className={"text-center"}>Form to create series</h3>
+                        <form className="" >
                             <label className={"m-3"}>Name</label>
                             <input placeholder={"Name"}
                                    className={"form-control"}
@@ -78,7 +79,7 @@ const CreateSeries = () => {
                                    maxLength={100}
                                    required={true}/>
                             <div className="text-center">
-                                <button onSubmit={submitSeries} className="btn btn-primary px-5 mt-4 ">Add <i className="bi bi-plus-square"/>
+                                <button onSubmit={submitSeries} className="btn btn-success px-5 mt-4 ">Add <i className="bi bi-plus-square"/>
                                 </button>
                             </div>
                         </form>
