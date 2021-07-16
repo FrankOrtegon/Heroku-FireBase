@@ -37,11 +37,13 @@ export const addSeries = (series) => {
     return async (dispatch) => {
         dispatch({type: seriesConstants.POST_SERIES_REQUEST})
         const seriesJson =JSON.stringify(series)
+        console.log(seriesJson)
         fetch(host.POST_SERIES, {
-            method: "POST",
+            method: 'POST',
             body: seriesJson,
-            header: {
-                'Content-Type': 'application/json'
+            headers:{
+                'Accept': 'application/json, text/plain',
+                'Content-Type': 'application/json;charset=UTF-8'
             }
         }).then(response => response.json())
             .then((json) => {

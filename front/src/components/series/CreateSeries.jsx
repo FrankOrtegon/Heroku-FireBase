@@ -22,7 +22,6 @@ const CreateSeries = () => {
             categoriaId: category,
             urlImagen: urlImage
         }
-        console.log(seriesObject)
 
         dispatch(addSeries(seriesObject))
 

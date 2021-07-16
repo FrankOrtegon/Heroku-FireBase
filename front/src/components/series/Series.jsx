@@ -13,11 +13,11 @@ const Series = () => {
 
     return (
         <div className="col-md-10 mx-auto">
+            <h1 className={"text-center mb-4"}>Series</h1>
             <div className="row ">
-                <h1>Series</h1>
                 {series.series.map(element => {
                     return (
-                        <div className="col-md-3 mx-auto">
+                        <div className="col-md-3 mx-auto" key={element.id}>
                             <div className="card">
                                 <div className="card-body">
                                     <div key={element.id}>
@@ -42,7 +42,8 @@ const Series = () => {
                                 </div>
                             </div>
                         </div>
-                    )})}
+                    )
+                })}
             </div>
         </div>
     )
