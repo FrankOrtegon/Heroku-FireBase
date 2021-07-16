@@ -4,10 +4,18 @@ export const seriesConstants = {
     GET_SERIES_FAILURE: 'GET_SERIES_FAILURE',
     POST_SERIES_REQUEST: 'POST_SERIES_REQUEST',
     POST_SERIES_SUCCESSFUL: 'POST_SERIES_SUCCESSFUL',
-    POST_SERIES_FAILURE: 'POST_SERIES_FAILURE'
+    POST_SERIES_FAILURE: 'POST_SERIES_FAILURE',
+    DELETE_SERIES_REQUEST: 'DELETE_SERIES_REQUEST',
+    DELETE_SERIES_SUCCESSFUL: 'DELETE_SERIES_SUCCESSFUL',
+    DELETE_SERIES_FAILURE: 'DELETE_SERIES_FAILURE',
+    UPDATE_SERIES_REQUEST: 'UPDATE_SERIES_REQUEST',
+    UPDATE_SERIES_SUCCESSFUL: 'UPDATE_SERIES_SUCCESSFUL',
+    UPDATE_SERIES_FAILURE: 'UPDATE_SERIES_FAILURE'
 }
 
 export const host = {
     GET_SERIES: 'https://mighty-island-18127.herokuapp.com/series/',
-    POST_SERIES: 'https://mighty-island-18127.herokuapp.com/series/createserie'
+    POST_SERIES: 'https://mighty-island-18127.herokuapp.com/series/createserie',
+    DELETE_SERIES: 'https://mighty-island-18127.herokuapp.com/series/deleteserie/',
+    UPDATE_SERIES: ''
 }

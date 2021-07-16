@@ -7,29 +7,30 @@ const CreateSeries = () => {
 
     const [name, setName] = useState('');
     const [seasons, setSeasons] = useState('');
-    const [category, setCategory] = useState('terror');
+    const [category, setCategory] = useState('60f083d8eb32e255d5c99a50');
     const [urlImage, setUrlImage] = useState('');
 
     const dispatch = useDispatch();
 
     const submitSeries = () => {
-        const seriesObject = {
-            nombre: name,
-            numeroTemporadas: seasons,
-            categoriaId: category,
-            urlImagen: urlImage
+        if(name.length > 3 && name.length < 20 && parseInt(seasons) > 0 && parseInt(seasons) < 30 && urlImage !== ""){
+            const seriesObject = {
+                nombre: name,
+                numeroTemporadas: seasons,
+                categoriaId: category,
+                urlImagen: urlImage
+            }
+
+            dispatch(addSeries(seriesObject))
+
+            setName('');
+            setSeasons('');
+            setCategory('terror');
+            setUrlImage('');
+
+            window.location = '/series';
         }
 
-        dispatch(addSeries(seriesObject))
-
-        setName('');
-        setSeasons('');
-        setCategory('terror');
-        setUrlImage('');
-
-        return (
-            <Redirect to={{pathname: "/series"}}/>
-        )
     }
 
     return (
@@ -44,10 +45,7 @@ const CreateSeries = () => {
                            className={"form-control"}
                            name={"name"}
                            onChange={(event => setName(event.target.value))}
-                           value={name}
-                           minLength={10}
-                           maxLength={100}
-                           required={true}/>
+                           value={name}/>
                     <label className={"m-3"}>Category</label>
                     <select className="form-select form-control"
                             name={"category"}
@@ -65,19 +63,13 @@ const CreateSeries = () => {
                            className={"form-control"}
                            name={"seasons"}
                            onChange={(event => setSeasons(event.target.value))}
-                           value={seasons}
-                           min={1}
-                           max={20}
-                           required={true}/>
+                           value={seasons}/>
                     <label className={"m-3"}>URL Image</label>
                     <input placeholder={"URL . . ."}
                            className={"form-control"}
                            name={"urlImage"}
                            onChange={(event => setUrlImage(event.target.value))}
-                           value={urlImage}
-                           minLength={10}
-                           maxLength={100}
-                           required={true}/>
+                           value={urlImage}/>
                     <div className="text-center">
                         <button onClick={submitSeries} className="btn btn-success px-5 mt-4 ">Add <i
                             className="bi bi-plus-square"/>

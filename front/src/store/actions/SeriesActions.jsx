@@ -58,3 +58,22 @@ export const addSeries = (series) => {
         })
     }
 }
+
+export const deleteSeries = (id) =>{
+    return async (dispatch) => {
+        dispatch({type: seriesConstants.DELETE_SERIES_REQUEST})
+        fetch(host.DELETE_SERIES+id,{
+            method:"DELETE"
+        }).then(response => {
+            dispatch({
+                type: seriesConstants.DELETE_SERIES_SUCCESSFUL
+            })
+        }).catch(error=>{
+            console.log(error)
+            dispatch({
+                type: seriesConstants.DELETE_SERIES_FAILURE,
+                payload: {error:error}
+            })
+        })
+    }
+}
