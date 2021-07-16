@@ -1,34 +1,41 @@
 import {host, seriesConstants} from "../../utils/Constants";
 
 export const getAllSeries = () => {
-    return async (dispatch) =>{
+    return async (dispatch) => {
         dispatch({type: seriesConstants.GET_SERIES_REQUEST})
-        fetch(host.GET_USERS)
+        fetch(host.GET_SERIES, )
             .then(response => response.json())
-            .then(json =>{
-                if(json.length > 0){
+            .then(json => {
+                if (json.length > 0) {
                     dispatch({
                         type: seriesConstants.GET_SERIES_SUCCESSFUL,
-                        payload:{
+                        payload: {
                             series: json
                         }
                     })
-                }else{
+                } else {
                     dispatch({
                         type: seriesConstants.GET_SERIES_FAILURE,
-                        payload:{
-                            error: "No se ha encontrado ningun registro"
+                        payload: {
+                            error: "No series found"
                         }
                     })
                 }
-            }).catch(error=>{
+            }).catch(error => {
             console.log(error)
             dispatch({
                 type: seriesConstants.GET_SERIES_FAILURE,
-                payload:{
+                payload: {
                     error: error
                 }
             })
         })
+    }
+}
+
+export const addSeries = (series) => {
+    return async (dispatch) => {
+        dispatch({type: seriesConstants.POST_SERIES_REQUEST})
+
     }
 }

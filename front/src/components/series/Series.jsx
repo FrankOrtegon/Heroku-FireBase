@@ -21,8 +21,10 @@ const Series = () => {
                     <h1>Series</h1>
                     {series.series.map(element => {
                         return (
-                            <div>
-                                {element.title}
+                            <div key={element.id}>
+                                <h1>{element.nombre}</h1>
+                                <h3>{element.numeroTemporadas}</h3>
+                                <h3>{element.categoriaId}</h3>
                             </div>
                         )
                     })}

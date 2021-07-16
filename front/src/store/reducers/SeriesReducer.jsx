@@ -28,6 +28,26 @@ const seriesReducer = (state = initState, action) => {
                 error: action.payload.error
             }
             break;
+        case seriesConstants.POST_SERIES_REQUEST:
+            state={
+                ...state,
+                loading: true
+            }
+            break;
+        case seriesConstants.POST_SERIES_SUCCESSFUL:
+            state={
+                ...state,
+                loading: false,
+                error:null
+            }
+            break;
+        case seriesConstants.POST_SERIES_FAILURE:
+            state={
+                ...state,
+                loading: false,
+                error: action.payload.error
+            }
+            break;
         default:
             break;
     }
