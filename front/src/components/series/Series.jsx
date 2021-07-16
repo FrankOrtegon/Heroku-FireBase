@@ -14,23 +14,25 @@ const Series = () => {
     console.log()
 
     return (
-        <div className=" container text-center ">
-            <div className="row">
-                <div className="col-md-3"/>
-                <div className="col-md-6">
-                    <h1>Series</h1>
-                    {series.series.map(element => {
-                        return (
-                            <div key={element.id}>
-                                <h1>{element.nombre}</h1>
-                                <h3>{element.numeroTemporadas}</h3>
-                                <h3>{element.categoriaId}</h3>
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-        </div>
+        
+<div classname="col-md-10 mx-auto">
+<div classname="row ">
+  <div classname="col-md-3 mx-auto">
+    <div classname="card">
+      <div classname="card-body">
+        <h4 classname="card-title"> {element.nombre} </h4>        
+        
+        <p> {element.numeroTemporadas}  </p>
+        <h5> {element.categoriaId}</h5>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
     )
 }
 
