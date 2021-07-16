@@ -46,26 +46,4 @@ public class ServicioCRUD {
         serieRepositorio.deleteById(id);
     }
 
-    // CRUD del model Categoria
-
-    public List<CategoriaDTO> getAllCategoria(){
-        List<Categoria> categoriaList = (List<Categoria>) categoriaRepositorio.findAll();
-        return categoriaMapper.fromCollectionList(categoriaList);
-    }
-
-    public CategoriaDTO createCategoria(CategoriaDTO categoriaDTO){
-        Categoria categoria = categoriaMapper.fromDTO(categoriaDTO);
-        return categoriaMapper.fromModel(categoriaRepositorio.save(categoria));
-    }
-
-    public CategoriaDTO updateCategoria(CategoriaDTO categoriaDTO) {
-        Categoria categoria = categoriaMapper.fromDTO(categoriaDTO);
-        categoriaRepositorio.findById(categoria.getCategoriaId()).orElseThrow(() -> new RuntimeException("Categoria no encontrada"));
-        return categoriaMapper.fromModel(categoriaRepositorio.save(categoria));
-    }
-
-    public void deleteCategoria(String id){
-        categoriaRepositorio.deleteById(id);
-    }
-
 }

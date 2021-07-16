@@ -49,39 +49,6 @@ public class ControladorCRUD {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
-    //Controlador CRUD del model Categoria
-
-    @GetMapping("/listcategoria")
-    public ResponseEntity<List<CategoriaDTO>> findAllCateogira(){
-        return new ResponseEntity<>(servicioCRUD.getAllCategoria(), HttpStatus.OK);
-    }
-
-    @PostMapping("/createcategoria")
-    public ResponseEntity<CategoriaDTO> createCategoria(@RequestBody CategoriaDTO categoriaDTO){
-        return new ResponseEntity<>(servicioCRUD.createCategoria(categoriaDTO), HttpStatus.CREATED);
-    }
-
-    @PutMapping("/updatecategoria")
-    public ResponseEntity<CategoriaDTO> updateCategoria(@RequestBody CategoriaDTO categoriaDTO){
-        if(categoriaDTO.getCategoriaId() != null){
-            return new ResponseEntity<>(servicioCRUD.updateCategoria(categoriaDTO), HttpStatus.ACCEPTED);
-
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
-
-    @DeleteMapping("/deletecategoria/{id}")
-    public ResponseEntity deleteCategoria(@PathVariable("id") String id){
-        try {
-            servicioCRUD.deleteCategoria(id);
-            return new ResponseEntity<>(HttpStatus.OK);
-        }catch (Exception error){
-            System.out.println(error.getMessage());
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-
 }
 
 
