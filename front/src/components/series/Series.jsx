@@ -15,7 +15,7 @@ const Series = () => {
 
     return (
         
-<div classname="col-md-10 mx-auto">
+<div className="col-md-10 mx-auto">
 <div classname="row ">
   <div classname="col-md-3 mx-auto">
     <div classname="card">

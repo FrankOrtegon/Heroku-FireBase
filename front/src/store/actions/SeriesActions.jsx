@@ -3,7 +3,7 @@ import {host, seriesConstants} from "../../utils/Constants";
 export const getAllSeries = () => {
     return async (dispatch) => {
         dispatch({type: seriesConstants.GET_SERIES_REQUEST})
-        fetch(host.GET_SERIES, )
+        fetch(host.GET_SERIES,)
             .then(response => response.json())
             .then(json => {
                 if (json.length > 0) {
@@ -36,6 +36,23 @@ export const getAllSeries = () => {
 export const addSeries = (series) => {
     return async (dispatch) => {
         dispatch({type: seriesConstants.POST_SERIES_REQUEST})
-
+        const seriesJson =JSON.stringify(series)
+        fetch(host.POST_SERIES, {
+            method: "POST",
+            body: seriesJson,
+            header: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json())
+            .then((json) => {
+                console.log(json)
+                dispatch({type: seriesConstants.POST_SERIES_SUCCESSFUL})
+            }).catch((error) => {
+            console.log(error)
+            dispatch({
+                type: seriesConstants.POST_SERIES_FAILURE,
+                payload:{error:error}
+            })
+        })
     }
 }
