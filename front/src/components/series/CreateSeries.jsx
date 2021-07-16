@@ -1,6 +1,7 @@
-import {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useState} from "react";
+import {useDispatch} from "react-redux";
 import {addSeries} from "../../store/actions/SeriesActions";
+import {Redirect} from "react-router-dom";
 
 const CreateSeries = () => {
 
@@ -10,10 +11,6 @@ const CreateSeries = () => {
     const [urlImage, setUrlImage] = useState('');
 
     const dispatch = useDispatch();
-
-    useEffect(() => {
-
-    }, [])
 
     const submitSeries = () => {
         const seriesObject = {
@@ -29,6 +26,10 @@ const CreateSeries = () => {
         setSeasons('');
         setCategory('terror');
         setUrlImage('');
+
+        return (
+            <Redirect to={{pathname: "/series"}}/>
+        )
     }
 
     return (

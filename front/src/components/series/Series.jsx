@@ -9,7 +9,7 @@ const Series = () => {
 
     useEffect(() => {
         dispatch(getAllSeries())
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="col-md-10 mx-auto">
@@ -30,14 +30,13 @@ const Series = () => {
                                             {(element.categoriaId==='60f083afeb32e255d5c99a4e')?"Science fiction":null}
                                         </h5>
                                         <p> {element.numeroTemporadas}  </p>
-                                        <img src={element.urlImagen} className={"card-img"}/>
-                                        <button type="submit" className="btn btn-primary " style="width:40px; height:40px; float:right">
+                                        <img src={element.urlImagen} className={"card-img"}  alt={""}/>
+                                        <button type="submit" className="btn btn-primary ">
                                         <i className="bi bi-pencil-square"/>
                                         </button>
-                                        <button type="submit" className="btn btn-danger" style="width:40px; height:40px; float:right">
+                                        <button type="submit" className="btn btn-danger" >
                                         <i className="bi bi-trash"/>
                                         </button>
-
                                     </div>
                                 </div>
                             </div>
