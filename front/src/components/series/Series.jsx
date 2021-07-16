@@ -11,36 +11,27 @@ const Series = () => {
         dispatch(getAllSeries())
     }, [])
 
-    console.log()
-
     return (
-
-
-
         <div className="col-md-10 mx-auto">
             <div className="row ">
-            <div className="col-md-3 mx-auto">
-                <div className="card">
-                <div className="card-body">
                 <h1>Series</h1>
-                    {series.series.map(element => {
-                        return (
-                            <div key={element.id}>
-                                <h4 className="card-title"> {element.nombre} </h4>  
-                                <h5> {element.categoriaId}</h5>   
-                                <p> {element.numeroTemporadas}  </p>
-                                
+                {series.series.map(element => {
+                    return (
+                        <div className="col-md-3 mx-auto">
+                            <div className="card">
+                                <div className="card-body">
+                                    <div key={element.id}>
+                                        <h4 className="card-title"> {element.nombre} </h4>
+                                        <h5> {element.categoriaId}</h5>
+                                        <p> {element.numeroTemporadas}  </p>
+                                        <img src={element.urlImagen} className={"card-img"}/>
+                                    </div>
+                                </div>
                             </div>
-                        )
-                    })}   
+                        </div>
+                    )})}
             </div>
-            </div>
         </div>
-        </div>
-        </div>
-
-
-
     )
 }
 
