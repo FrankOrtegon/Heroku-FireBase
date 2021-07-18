@@ -65,8 +65,10 @@ export const deleteSeries = (id) =>{
         fetch(host.DELETE_SERIES+id,{
             method:"DELETE"
         }).then(response => {
+            console.log(response)
             dispatch({
-                type: seriesConstants.DELETE_SERIES_SUCCESSFUL
+                type: seriesConstants.DELETE_SERIES_SUCCESSFUL,
+                payload: {id:id}
             })
         }).catch(error=>{
             console.log(error)

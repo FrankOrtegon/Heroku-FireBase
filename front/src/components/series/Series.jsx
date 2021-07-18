@@ -27,10 +27,10 @@ const Series = () => {
             <div className="row ">
                 {series.series.map(element => {
                     return (
-                        <div className="col-md-3 mx-auto" key={element.id}>
+                        <div className="col-md-3 mx-auto " key={element.id}>
                             <div className="card">
                                 <div className="card-body">
-                                    <div key={element.id}>
+                                    <div key={element.id} className={"text-center"}>
                                         <h4 className="card-title"> {element.nombre} </h4>
                                         <h5>
                                             {(element.categoriaId === "60f083d8eb32e255d5c99a50") ? "Terror" : null}
@@ -39,12 +39,9 @@ const Series = () => {
                                             {(element.categoriaId === '60f083f1eb32e255d5c99a52') ? "Anime" : null}
                                             {(element.categoriaId === '60f083afeb32e255d5c99a4e') ? "Science fiction" : null}
                                         </h5>
-                                        <p> Seasons: {element.numeroTemporadas}  </p>
-                                        <img src={element.urlImagen} className={"card-img mb-3"} alt={""}/>
-                                        <button type="submit" className="btn btn-primary px-5">
-                                            Edit <i className="bi bi-pencil-square"/>
-                                        </button>
-                                        <button onClick={() => deleteUserSeries(element.id)} className="btn btn-danger px-5 float-right">
+                                        <h5> Seasons: {element.numeroTemporadas}  </h5>
+                                        <img src={element.urlImagen} className={"card-img mb-3 card-size"} alt={""}/>
+                                        <button onClick={() => deleteUserSeries(element.id)} className="btn btn-danger px-5">
                                             Delete <i className="bi bi-trash"/>
                                         </button>
                                     </div>

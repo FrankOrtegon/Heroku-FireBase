@@ -55,8 +55,10 @@ const seriesReducer = (state = initState, action) => {
             }
             break;
         case seriesConstants.DELETE_SERIES_SUCCESSFUL:
+            let series = state.series.filter((series) => series.id !== action.payload.id)
             state={
                 ...state,
+                series: series,
                 loading: false,
                 error: null
             }

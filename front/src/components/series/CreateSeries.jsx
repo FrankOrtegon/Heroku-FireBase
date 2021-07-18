@@ -1,7 +1,6 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {addSeries} from "../../store/actions/SeriesActions";
-import {Redirect} from "react-router-dom";
 
 const CreateSeries = () => {
 
